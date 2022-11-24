@@ -16,7 +16,7 @@
  
 <div class="container d-flex">
     <div class="col-md-6 p-3">
-        <h2>Receitas: R$ {{$totReceitas}}</h2>
+        <h2>Receitas: R$ {{ number_format($totReceitas, 2,',','.')}}</h2>
  
         @if(count($receitas) == 0)
             <p>Não Há movimentação de receitas</p>
@@ -24,7 +24,7 @@
             @foreach($receitas as $receita)
                 <div class="card mb-4">
                     <div class="card-body">
-                        <p class="card-title">{{$receita->descricao}}</p>
+                        <p class="card-title">{{ number_format($receita->valor, 2,',','.')}}</p>
                         <p class="card-text">R$ {{$receita->valor}}</p>
                     </div>
                     <div class="card-footer">
@@ -45,14 +45,14 @@
     </div>
  
     <div class="col-md-6 p-3">
-        <h2>Despesas: R$ {{$totDespesas}}</h2>
+        <h2>Despesas: R$ {{number_format($totDespesas, 2,',','.')}}</h2>
         @if(count($despesas) == 0)
             <p>Não Há movimentação de despesas</p>
         @else
             @foreach($despesas as $despesa)
                 <div class="card mb-4">
                     <div class="card-body">
-                        <p class="card-title">{{$despesa->descricao}}</p>
+                        <p class="card-title">{{ number_format($despesa->valor, 2,',','.')}}</p>
                         <p class="card-text">R$ {{$despesa->valor}}</p>
                     </div>
                     <div class="card-footer">
