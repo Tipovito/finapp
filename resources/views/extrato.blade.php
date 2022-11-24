@@ -10,7 +10,7 @@
  
 @section('conteudo')
 <header class="text-center fw-bold @if($totReceitas - $totDespesas < 0 )text-danger @endif">
-    EXTRATO - Saldo: R$ {{$totReceitas - $totDespesas}}
+    EXTRATO - Saldo: R$ {{number_format($totReceitas - $totDespesas, 2, ',','.')}}
 </header>
  
  
